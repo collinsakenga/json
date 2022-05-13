@@ -1,0 +1,8 @@
+identification = data["note"]
+checkresponse = check.json() #API request get, json file
+checkstring = json.dumps(checkresponse) #Turns json file into string value
+
+if identification in str(checkstring): #if in database, do not allow!
+        embed1 = discord.Embed(title="Error", description="Already whitelisted", color=0xFF0000)
+        await ctx.message.reply(embed=embed1)
+        await ctx.author.send(identification)
